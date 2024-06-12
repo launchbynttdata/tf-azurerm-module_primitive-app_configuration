@@ -103,3 +103,57 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.67.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.107.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_app_configuration.app_config](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_configuration) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_name"></a> [name](#input\_name) | Name of the App configuration store. | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | Azure location. | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name | `string` | n/a | yes |
+| <a name="input_customer_managed_encryption_key"></a> [customer\_managed\_encryption\_key](#input\_customer\_managed\_encryption\_key) | The customer managed encryption key configuration<br>    Requires a user assigned identity with read access to the desired key.<br>    The user assigned identity must be provided in the `identity_ids` variable. | <pre>object({<br>    key_vault_key_id   = string<br>    identity_client_id = string<br>  })</pre> | `null` | no |
+| <a name="input_local_auth_enabled"></a> [local\_auth\_enabled](#input\_local\_auth\_enabled) | Whether local authentication methods is enabled. | `bool` | `true` | no |
+| <a name="input_public_network_access"></a> [public\_network\_access](#input\_public\_network\_access) | Whether public network access is enabled. Possible values are 'Enabled' and 'Disabled'. | `string` | `"Enabled"` | no |
+| <a name="input_purge_protection_enabled"></a> [purge\_protection\_enabled](#input\_purge\_protection\_enabled) | Whether purge protection is enabled. | `bool` | `false` | no |
+| <a name="input_replicas"></a> [replicas](#input\_replicas) | Locations to replicate the App configuration store | `map(string)` | `null` | no |
+| <a name="input_sku"></a> [sku](#input\_sku) | The SKU of the App Configuration. Possible values are 'free' and 'standard'. | `string` | `"free"` | no |
+| <a name="input_soft_delete_retention_days"></a> [soft\_delete\_retention\_days](#input\_soft\_delete\_retention\_days) | The number of days that items should be retained for once soft-deleted. | `number` | `7` | no |
+| <a name="input_identity_ids"></a> [identity\_ids](#input\_identity\_ids) | Specifies a list of user managed identity ids to be assigned. | `list(string)` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Custom tags for the App Configuration store | `map(string)` | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_app_configuration_id"></a> [app\_configuration\_id](#output\_app\_configuration\_id) | n/a |
+| <a name="output_app_configuration_endpoint"></a> [app\_configuration\_endpoint](#output\_app\_configuration\_endpoint) | n/a |
+| <a name="output_app_configuration_primary_read_key"></a> [app\_configuration\_primary\_read\_key](#output\_app\_configuration\_primary\_read\_key) | n/a |
+| <a name="output_app_configuration_primary_write_key"></a> [app\_configuration\_primary\_write\_key](#output\_app\_configuration\_primary\_write\_key) | n/a |
+| <a name="output_app_configuration_secondary_read_key"></a> [app\_configuration\_secondary\_read\_key](#output\_app\_configuration\_secondary\_read\_key) | n/a |
+| <a name="output_app_configuration_secondary_write_key"></a> [app\_configuration\_secondary\_write\_key](#output\_app\_configuration\_secondary\_write\_key) | n/a |
+| <a name="output_app_configuration_identity"></a> [app\_configuration\_identity](#output\_app\_configuration\_identity) | n/a |
+| <a name="output_app_configuration_replica"></a> [app\_configuration\_replica](#output\_app\_configuration\_replica) | n/a |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -51,4 +51,6 @@ module "app_configuration" {
   soft_delete_retention_days      = var.soft_delete_retention_days
 
   tags = merge(var.tags, { resource_name = module.resource_names["app_configuration"].standard })
+
+  depends_on = [module.resource_group]
 }

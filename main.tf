@@ -23,7 +23,7 @@ resource "azurerm_app_configuration" "app_config" {
   sku = var.sku
 
   identity {
-    type         = var.identity_ids != null ? "SystemAssigned, UserAssigned" : "SystemAssigned"
+    type         = var.identity_ids != null ? "UserAssigned" : "SystemAssigned"
     identity_ids = var.identity_ids
   }
 

@@ -11,7 +11,8 @@
 // limitations under the License.
 
 module "resource_names" {
-  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.1"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
+  version = "~> 2.0"
 
   for_each = var.resource_names_map
 
@@ -22,10 +23,13 @@ module "resource_names" {
   cloud_resource_type     = each.value.name
   instance_env            = var.instance_env
   maximum_length          = each.value.max_length
+  instance_resource       = var.instance_resource
+  use_azure_region_abbr   = var.use_azure_region_abbr
 }
 
 module "resource_group" {
-  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-resource_group.git?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm"
+  version = "~> 1.0"
 
   name     = module.resource_names["resource_group"].minimal_random_suffix
   location = var.location

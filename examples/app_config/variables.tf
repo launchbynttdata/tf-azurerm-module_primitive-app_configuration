@@ -97,6 +97,12 @@ variable "class_env" {
   }
 }
 
+variable "use_azure_region_abbr" {
+  description = "Abbreviate the region in the resource names"
+  type        = bool
+  default     = true
+}
+
 variable "location" {
   description = "target resource group resource mask"
   type        = string

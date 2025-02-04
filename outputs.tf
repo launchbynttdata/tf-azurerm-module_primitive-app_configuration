@@ -14,6 +14,10 @@ output "app_configuration_id" {
   value = azurerm_app_configuration.app_config.id
 }
 
+output "app_configuration_name" {
+  value = azurerm_app_configuration.app_config.name
+}
+
 output "app_configuration_endpoint" {
   value = azurerm_app_configuration.app_config.endpoint
 }

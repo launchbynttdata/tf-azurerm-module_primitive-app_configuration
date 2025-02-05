@@ -134,7 +134,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name of the App configuration store. | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Azure location. | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name | `string` | n/a | yes |
-| <a name="input_customer_managed_encryption_key"></a> [customer\_managed\_encryption\_key](#input\_customer\_managed\_encryption\_key) | The customer managed encryption key configuration<br>    Requires a user assigned identity with read access to the desired key.<br>    The user assigned identity must be provided in the `identity_ids` variable. | <pre>object({<br>    key_vault_key_id   = string<br>    identity_client_id = string<br>  })</pre> | `null` | no |
+| <a name="input_customer_managed_encryption_key"></a> [customer\_managed\_encryption\_key](#input\_customer\_managed\_encryption\_key) | The customer managed encryption key configuration<br/>    Requires a user assigned identity with read access to the desired key.<br/>    The user assigned identity must be provided in the `identity_ids` variable. | <pre>object({<br/>    key_vault_key_id   = string<br/>    identity_client_id = string<br/>  })</pre> | `null` | no |
 | <a name="input_local_auth_enabled"></a> [local\_auth\_enabled](#input\_local\_auth\_enabled) | Whether local authentication methods is enabled. | `bool` | `true` | no |
 | <a name="input_public_network_access"></a> [public\_network\_access](#input\_public\_network\_access) | Whether public network access is enabled. Possible values are 'Enabled' and 'Disabled'. | `string` | `"Enabled"` | no |
 | <a name="input_purge_protection_enabled"></a> [purge\_protection\_enabled](#input\_purge\_protection\_enabled) | Whether purge protection is enabled. | `bool` | `false` | no |
@@ -149,6 +149,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_app_configuration_id"></a> [app\_configuration\_id](#output\_app\_configuration\_id) | n/a |
+| <a name="output_app_configuration_name"></a> [app\_configuration\_name](#output\_app\_configuration\_name) | n/a |
 | <a name="output_app_configuration_endpoint"></a> [app\_configuration\_endpoint](#output\_app\_configuration\_endpoint) | n/a |
 | <a name="output_app_configuration_primary_read_key"></a> [app\_configuration\_primary\_read\_key](#output\_app\_configuration\_primary\_read\_key) | n/a |
 | <a name="output_app_configuration_primary_write_key"></a> [app\_configuration\_primary\_write\_key](#output\_app\_configuration\_primary\_write\_key) | n/a |

@@ -1,22 +1,30 @@
 package testimpl
 
 import (
+	"context"
 	"os"
 	"testing"
-	"context"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/arm"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/cloud"
 	// "github.com/Azure/azure-sdk-for-go/sdk/azcore/to"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/appconfiguration/armappconfiguration/v2"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/launchbynttdata/lcaf-component-terratest/types"
 	"github.com/stretchr/testify/assert"
-	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/appconfiguration/armappconfiguration/v2"
 )
 
 func TestAppConfiguration(t *testing.T, ctx types.TestContext) {
+	testAppConfiguration(t, ctx)
+}
+
+func TestComposableAppConfiguration(t *testing.T, ctx types.TestContext) {
+	testAppConfiguration(t, ctx)
+}
+
+func testAppConfiguration(t *testing.T, ctx types.TestContext) {
 	subscriptionId := os.Getenv("ARM_SUBSCRIPTION_ID")
 
 	if len(subscriptionId) == 0 {

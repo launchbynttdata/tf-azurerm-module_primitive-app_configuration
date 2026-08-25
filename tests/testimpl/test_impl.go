@@ -48,8 +48,8 @@ func testAppConfiguration(t *testing.T, ctx types.TestContext) {
 	}
 
 	t.Run("TestAppConfiguration", func(t *testing.T) {
-		appconfigName := terraform.Output(t, ctx.TerratestTerraformOptions(), "app_configuration_name")
-		resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
+		appconfigName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "app_configuration_name")
+		resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
 
 		resp, err := clientFactory.NewConfigurationStoresClient().Get(context.Background(), resourceGroupName, appconfigName, nil)
 		if err != nil {
